@@ -1,0 +1,183 @@
+@HostAddress = http://localhost:5025
+
+### 🛑 LOS 5 PACIENTES CRÍTICOS (Gravedad 5)
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Carlos Fuentes", "gravedad": 5, "medicoCarnet": "MED-1010" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Maria Gomez", "gravedad": 5, "medicoCarnet": "MED-2020" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Luis Herrera", "gravedad": 5, "medicoCarnet": "MED-3030" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Ana Torres", "gravedad": 5, "medicoCarnet": "MED-4040" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Pedro Ramirez", "gravedad": 5, "medicoCarnet": "MED-5050" }
+
+
+### 🟡 PACIENTES DE GRAVEDAD MEDIA/ALTA (Gravedad 3 y 4)
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Sofia Castro", "gravedad": 4, "medicoCarnet": "MED-1010" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Jorge Diaz", "gravedad": 4, "medicoCarnet": "MED-2020" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Carmen Salinas", "gravedad": 4, "medicoCarnet": "MED-3030" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Roberto Vega", "gravedad": 4, "medicoCarnet": "MED-4040" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Elena Rojas", "gravedad": 4, "medicoCarnet": "MED-5050" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Mario Luna", "gravedad": 4, "medicoCarnet": "MED-1010" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Lucia Mendez", "gravedad": 3, "medicoCarnet": "MED-2020" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Fernando Ruiz", "gravedad": 3, "medicoCarnet": "MED-3030" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Gloria Treviño", "gravedad": 3, "medicoCarnet": "MED-4040" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Hector Salas", "gravedad": 3, "medicoCarnet": "MED-5050" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Isabel Pantoja", "gravedad": 3, "medicoCarnet": "MED-1010" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "David Bisbal", "gravedad": 3, "medicoCarnet": "MED-2020" }
+
+
+### 🟢 PACIENTES ESTABLES (Gravedad 1 y 2)
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Valeria Mazza", "gravedad": 2, "medicoCarnet": "MED-3030" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Ricardo Arjona", "gravedad": 2, "medicoCarnet": "MED-4040" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Paulina Rubio", "gravedad": 2, "medicoCarnet": "MED-5050" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Alejandro Sanz", "gravedad": 2, "medicoCarnet": "MED-1010" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Thalia Sodi", "gravedad": 2, "medicoCarnet": "MED-2020" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Chayanne Figueroa", "gravedad": 2, "medicoCarnet": "MED-3030" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Shakira Mebarak", "gravedad": 1, "medicoCarnet": "MED-4040" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Juanes Aristizabal", "gravedad": 1, "medicoCarnet": "MED-5050" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Ricky Martin", "gravedad": 1, "medicoCarnet": "MED-1010" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Laura Pausini", "gravedad": 1, "medicoCarnet": "MED-2020" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Enrique Iglesias", "gravedad": 1, "medicoCarnet": "MED-3030" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Marc Anthony", "gravedad": 1, "medicoCarnet": "MED-4040" }
+
+###
+POST {{HostAddress}}/api/pacientes/registro
+Content-Type: application/json
+
+{ "nombreCompleto": "Celia Cruz", "gravedad": 1, "medicoCarnet": "MED-5050" }

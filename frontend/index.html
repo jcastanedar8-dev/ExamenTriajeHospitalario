@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGTH - Recepción de Emergencias</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Triaje - Sistema de Gestión</h1>
+        <nav>
+            <button onclick="mostrarSeccion('ver')">Ver Casos</button>
+            <button onclick="mostrarSeccion('registrar')">Registrar Paciente</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="seccion-ver">
+            <h2>Pacientes en Espera</h2>
+            <div id="contenedor-pacientes" class="grid-pacientes">
+                </div>
+        </section>
+
+        <section id="seccion-registrar" style="display:none;">
+            <h2>Nuevo Registro de Emergencia</h2>
+            <form id="form-registro">
+                <input type="text" id="nombre" placeholder="Nombre del Paciente" required>
+                <textarea id="sintomas" placeholder="Descripción de Síntomas" required></textarea>
+                <label>Nivel de Gravedad (1 al 5):</label>
+                <input type="number" id="gravedad" min="1" max="5" value="1" required>
+                <input type="text" id="carnet" placeholder="Carnet del Médico (ej. MED-1010)" required>
+                <button type="submit">Guardar Registro</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

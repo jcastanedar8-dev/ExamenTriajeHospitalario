@@ -14,8 +14,19 @@ builder.Services.AddControllers();
 
 // 3. Configurar OpenAPI para Scalar
 builder.Services.AddOpenApi();
+// linea agregada 09-
+builder.Services.AddCors(options => {
+    options.AddDefaultPolicy(policy => {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+
 
 var app = builder.Build();
+app.UseCors();
 
 // 4. Activar Scalar para la documentación (Accesible en /scalar)
 app.MapOpenApi();

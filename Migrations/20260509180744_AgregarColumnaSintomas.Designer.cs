@@ -4,6 +4,7 @@ using HospitalApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace WebApiDemo2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260509180744_AgregarColumnaSintomas")]
+    partial class AgregarColumnaSintomas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,10 +45,6 @@ namespace WebApiDemo2.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("NombreCompleto")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Sintomas")
                         .IsRequired()
                         .HasColumnType("longtext");
 

@@ -12,6 +12,7 @@
         <nav>
             <button onclick="mostrarSeccion('ver')">Ver Casos</button>
             <button onclick="mostrarSeccion('registrar')">Registrar Paciente</button>
+            <button onclick="mostrarSeccion('reportes')">📊 Reporte Diario</button>
         </nav>
     </header>
 
@@ -32,6 +33,61 @@
                 <input type="text" id="carnet" placeholder="Carnet del Médico (ej. MED-1010)" required>
                 <button type="submit">Guardar Registro</button>
             </form>
+        </section>
+       
+        <section id="seccion-editar" style="display:none;">
+            <h2>Modificar Registro de Paciente</h2>
+            <form id="form-editar">
+                <input type="hidden" id="edit-id">
+                <input type="text" id="edit-nombre" placeholder="Nombre del Paciente" required>
+                <label>Nivel de Gravedad (1 al 5):</label>
+                <input type="number" id="edit-gravedad" min="1" max="5" required>
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit" style="flex: 1;">Actualizar Registro</button>
+                    <button type="button" onclick="mostrarSeccion('ver')" style="flex: 1; background:#e74c3c;">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="seccion-reportes" style="display:none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2>Reporte Estadístico Diario</h2>
+                <button onclick="imprimirReporte()" style="background-color: #27ae60; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    🖨️ Exportar a PDF
+                </button>
+            </div>
+
+            <div style="display: flex; gap: 15px; margin-bottom: 25px;">
+                <div style="flex: 1; background: #3498db; color: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <h3 style="margin:0; font-size: 2.5rem;" id="total-ingresados">0</h3>
+                    <p style="margin:5px 0 0; font-weight: bold;">Total Pacientes Ingresados</p>
+                </div>
+                <div style="flex: 1; background: #e67e22; color: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <h3 style="margin:0; font-size: 2.5rem;" id="total-espera">0</h3>
+                    <p style="margin:5px 0 0; font-weight: bold;">Pacientes en Espera</p>
+                </div>
+                <div style="flex: 1; background: #2ecc71; color: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <h3 style="margin:0; font-size: 2.5rem;" id="total-atendidos">0</h3>
+                    <p style="margin:5px 0 0; font-weight: bold;">Pacientes Atendidos</p>
+                </div>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table id="tabla-reporte" style="width: 100%; border-collapse: collapse; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background-color: #2c3e50; color: white; text-align: left;">
+                            <th style="padding: 12px;">ID</th>
+                            <th style="padding: 12px;">Paciente</th>
+                            <th style="padding: 12px;">Nivel Gravedad</th>
+                            <th style="padding: 12px;">Síntomas</th>
+                            <th style="padding: 12px;">Médico</th>
+                            <th style="padding: 12px;">Fecha/Hora Ingreso</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-reporte">
+                        </tbody>
+                </table>
+            </div>
         </section>
     </main>
 

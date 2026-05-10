@@ -41,15 +41,17 @@ namespace HospitalApi.Controllers
             }
 
             // 3. Generación del ID (Formato: PAC-2026-XXX)
-            var totalRegistros = _context.Pacientes.Count();
-            string nuevoId = $"PAC-2026-{(totalRegistros + 1).ToString("D3")}";
-
+            // 3. Generación del ID (A prueba de eliminaciones)
+                        string milisegundos = DateTime.Now.ToString("fff");
+                        int aleatorio = new Random().Next(10, 99);
+                        string nuevoId = $"PAC-2026-{milisegundos}{aleatorio}";
             // Construir el paciente a guardar
             var nuevoPaciente = new Paciente
             {
                 PacienteId = nuevoId,
                 NombreCompleto = request.NombreCompleto,
                 Gravedad = request.Gravedad,
+                Sintomas = request.Sintomas,
                 Estado = "En espera", // Estado inicial obligatorio
                 MedicoCarnet = request.MedicoCarnet,
                 FechaIngreso = DateTime.Now // Captura la fecha y hora exacta del sistema
@@ -98,6 +100,46 @@ namespace HospitalApi.Controllers
 
             return Ok(lista);
         }
+
+            // 1. MÉTODO PARA ELIMINAR (Para el botón rojo)
+[HttpDelete("{id}")]
+public async Task<IActionResult> EliminarPaciente(string id)
+{
+    var paciente = await _context.Pacientes.FindAsync(id);
+    if (paciente == null) return NotFound();
+    
+    _context.Pacientes.Remove(paciente);
+    await _context.SaveChangesAsync();
+    return Ok();
+}
+
+// 2. MÉTODO PARA MARCAR ATENDIDO (Para el botón azul)
+[HttpPut("{id}/atendido")]
+public async Task<IActionResult> MarcarAtendido(string id)
+{
+    var paciente = await _context.Pacientes.FindAsync(id);
+    if (paciente == null) return NotFound();
+
+    paciente.Estado = "Atendido";
+    await _context.SaveChangesAsync();
+    return Ok();
+}
+
+// 3. MÉTODO PARA EDITAR (Para el botón naranja)
+[HttpPut("{id}")]
+public async Task<IActionResult> EditarPaciente(string id, Paciente pacienteActualizado)
+{
+    var paciente = await _context.Pacientes.FindAsync(id);
+    if (paciente == null) return NotFound();
+
+    paciente.NombreCompleto = pacienteActualizado.NombreCompleto;
+    paciente.Gravedad = pacienteActualizado.Gravedad;
+    paciente.Sintomas = pacienteActualizado.Sintomas;
+    // Actualiza los demás campos necesarios...
+    
+    await _context.SaveChangesAsync();
+    return Ok();
+}
     }
 
     // Objeto de Transferencia de Datos (DTO) para la petición POST
@@ -106,5 +148,6 @@ namespace HospitalApi.Controllers
         public string NombreCompleto { get; set; } = string.Empty;
         public int Gravedad { get; set; }
         public string MedicoCarnet { get; set; } = string.Empty;
+        public string Sintomas { get; set; } = string.Empty;
     }
 }

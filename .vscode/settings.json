@@ -1,5 +1,5 @@
 {
     
-    "appService.deploySubpath": "bin\\Release\\net10.0\\publish",
+    
     "appService.defaultWebAppToDeploy": "/subscriptions/a44468f9-8500-437d-855f-c702d8c4586b/resourceGroups/appsvc_windows_eastus/providers/Microsoft.Web/sites/triaje-jeison-umg"
 }

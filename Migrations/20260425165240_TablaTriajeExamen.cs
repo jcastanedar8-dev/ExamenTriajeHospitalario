@@ -14,7 +14,7 @@ namespace WebApiDemo2.Migrations
            // migrationBuilder.AlterDatabase()
                 //.Annotation("MySql:CharSet", "utf8mb4");
 
-            migrationBuilder.CreateTable(
+            /*migrationBuilder.CreateTable(
                 name: "Triaje_Jeison",
                 columns: table => new
                 {
@@ -34,6 +34,7 @@ namespace WebApiDemo2.Migrations
                     table.PrimaryKey("PK_Triaje_Jeison", x => x.PacienteId);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
+                */
         }
 
         /// <inheritdoc />

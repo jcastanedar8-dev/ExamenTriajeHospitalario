@@ -11,6 +11,7 @@ namespace HospitalApi.Models
         public string PacienteId { get; set; } = string.Empty;
         public string NombreCompleto { get; set; } = string.Empty;
         public int Gravedad { get; set; } 
+        public string Sintomas { get; set; } = string.Empty;
         public string Estado { get; set; } = "En espera"; 
         public string MedicoCarnet { get; set; } = string.Empty;
         public DateTime FechaIngreso { get; set; }

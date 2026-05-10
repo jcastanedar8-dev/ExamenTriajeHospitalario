@@ -13,3 +13,36 @@ main { padding: 20px; max-width: 1000px; margin: auto; }
 form { background: white; padding: 20px; border-radius: 10px; display: flex; flex-direction: column; gap: 10px; }
 input, textarea { padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
 button[type="submit"] { background: #27ae60; color: white; border: none; padding: 15px; cursor: pointer; border-radius: 5px; }
+
+/* Botones de Acción en las tarjetas */
+hr { border: 0; border-top: 1px solid #eee; margin: 15px 0; }
+.acciones { display: flex; flex-wrap: wrap; gap: 5px; }
+.btn-accion { flex: 1; padding: 8px; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-weight: bold; color: white;}
+.btn-atendido { background-color: #3498db; } /* Azul */
+.btn-editar { background-color: #f39c12; } /* Naranja */
+.btn-eliminar { background-color: #e74c3c; } /* Rojo */
+.btn-accion:hover { opacity: 0.8; }
+
+/* Tabla de Reportes */
+table { width: 100%; border-collapse: collapse; margin-top: 15px; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+th { background-color: #2c3e50; color: white; text-transform: uppercase; font-size: 0.9rem; }
+tr:hover { background-color: #f5f5f5; }
+
+
+/* --- ESTILOS EXCLUSIVOS PARA LA EXPORTACIÓN A PDF --- */
+@media print {
+    /* 1. Fondo blanco puro */
+    body { background-color: white; }
+    
+    /* 2. Ocultar menús y botones innecesarios en el papel */
+    nav, button { display: none !important; }
+    
+    /* 3. Asegurar que la sección de reportes ocupe toda la página */
+    #seccion-reportes { display: block !important; width: 100%; }
+    
+    /* 4. Quitar sombras para un estilo de documento formal */
+    table, .card, div { box-shadow: none !important; }
+    table { border: 1px solid #000; }
+    th, td { border: 1px solid #ccc; }
+}
